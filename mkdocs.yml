@@ -1,0 +1,42 @@
+site_name: co-rc docs
+site_url: https://co-rc.github.io/
+repo_url: https://github.com/co-rc/co-rc.github.io
+repo_name: co-rc/co-rc.github.io
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: cyan
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - scheme: slate
+      primary: cyan
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Docs: docs/index.md
+  - Architecture:
+      - Overview: architecture/index.md
+      - ADR:
+          - Index: architecture/adr/index.md
+          - "0001: Docs site stack": architecture/adr/0001-docs-site-stack.md
+          - Template: architecture/adr/template.md
+  - Runbook: runbook/index.md
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
