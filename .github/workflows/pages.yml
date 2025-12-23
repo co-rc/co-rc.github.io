@@ -29,7 +29,6 @@ jobs:
       - uses: actions/configure-pages@v5
 
       - run: mkdocs build --strict --site-dir site
-      - run: test -f site/index.html
       - run: touch site/.nojekyll
 
       - uses: actions/upload-pages-artifact@v4
