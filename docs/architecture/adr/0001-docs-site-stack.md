@@ -1,6 +1,6 @@
-# ADR 0001: MkDocs + plugins
+# 0001: MkDocs + plugins
 
-- Status: accepted
+- Status: implemened
 - Date: 2025-12-23
 
 ## Context

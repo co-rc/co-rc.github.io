@@ -1,4 +1,4 @@
-# ADR 0002: Platforms and Languages
+# 0002: Platforms and Languages
 
 - Status: accepted
 - Date: 2025-12-24
@@ -40,14 +40,17 @@ Fundamental decisions regarding the technology stack.
 - Python:
     - MicroPython: Primary choice.
     - CircuitPython: May be better for NRF52840.
-- C++: Fallback if Python is insufficient (e.g., performance or specific hardware requirements).
+- C++: Fallback if Python is not enough (e.g., performance, power consumption, BT stack limitations).
+
+#### Mobile
+
 - Kotlin: Not planned.
 - Java (Android): Java 21.
 
 ### IDEs
 
 - Android/Java: IntelliJ Ultimate + Android plugin.
-- Microcontrollers/python: PyCharm + MicroPython plugin. 
+- Microcontrollers/python: PyCharm + MicroPython plugin.
 
 ## Consequences
 
