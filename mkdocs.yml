@@ -14,29 +14,52 @@ theme:
         name: Switch to dark mode
 
     - scheme: slate
-      primary: cyan
+      primary: teal
       accent: cyan
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
 
-nav:
-  - Home: index.md
-  - Docs: docs/index.md
-  - Architecture:
-      - Overview: architecture/index.md
-      - ADR:
-          - Index: architecture/adr/index.md
-          - "0001: Docs site stack": architecture/adr/0001-docs-site-stack.md
-          - Template: architecture/adr/template.md
-  - Runbook: runbook/index.md
-
 markdown_extensions:
   - pymdownx.superfences:
+      preserve_tabs: true
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: false
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - material/.icons
+  - pymdownx.saneheaders
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: co-rc
+      repo: co-rc.github.io
+  - pymdownx.smartsymbols
+  - pymdownx.mark
+  - admonition
+  - def_list
+  - pymdownx.progressbar
 
 plugins:
   - search
+  - awesome-nav
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/co-rc/
+
+copyright: "©2025 <a href=\"https://github.com/jbanaszczyk\">jbanaszczyk</a>"
+
+extra_css:
+  - stylesheets/extra.css

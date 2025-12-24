@@ -16,3 +16,10 @@ What is the decision? What is in scope/out of scope?
 - Positive outcomes
 - Trade-offs / risks
 - Follow-ups (if any)
+
+## Notes
+
+- examples
+- links
+- etc.
+

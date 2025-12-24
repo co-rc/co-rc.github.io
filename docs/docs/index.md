@@ -10,7 +10,7 @@ A place for shared notes that apply across repositories.
 
 ## Repository map (fill in)
 
-| Repo | Purpose | Entry point |
-|---|---|---|
-| `repo-a` | one-liner | README |
-| `repo-b` | one-liner | README |
+| Repo     | Purpose   | Entry point |
+|----------|-----------|-------------|
+| `repo-a` | one-liner | README      |
+| `repo-b` | one-liner | README      |
