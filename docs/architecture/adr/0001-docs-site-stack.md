@@ -26,16 +26,24 @@ Use:
 - Documentation lives centrally in `co-rc.github.io`.
 - Diagrams are authored as Mermaid fenced blocks.
 - Builds run in CI; local preview is optional (`mkdocs serve`).
-- Footer "Made with Material for MkDocs" is disabled for a cleaner look.
 - Custom footer with copyright notice and organization GitHub link is added.
 
 ## Notes
 
-PyMdown additions
+### MkDocs config
 
----
+#### Excluded files and directories
 
-### mermaid (pymdownx.superfences)
+The following patterns are excluded from the documentation build to prevent draft content and templates from being published:
+
+- `draft.*.md`: Any file starting with `draft.`
+- `.*draft.md`: Any file ending with `draft.md` (including hidden files)
+- `template.md`: Documentation templates
+- `hidden/`: Entire directory for internal or work-in-progress content
+
+### PyMdown additions
+
+#### mermaid (pymdownx.superfences)
 
 ```mermaid
 flowchart LR
@@ -47,7 +55,7 @@ flowchart LR
 
 ---
 
-### pymdownx.tasklist
+#### pymdownx.tasklist
 
 * [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
     * [x] Nulla lobortis egestas semper
@@ -55,13 +63,13 @@ flowchart LR
 
 ---
 
-### pymdownx.critic
+#### pymdownx.critic
 
 {-- Deleted --} {++ Added ++} {~~ Substituted ~> New Value ~~} {== Mark ==} {>> Comment <<}
 
 ---
 
-### pymdownx.details
+#### pymdownx.details
 
 ???+ warning "Remember to add empty line to avoid IntelliJ reformatting"
     
@@ -74,19 +82,19 @@ flowchart LR
 
 ---
 
-### pymdownx.inlinehilite
+#### pymdownx.inlinehilite
 
 The `#!python range()` function is handy.
 
 ---
 
-### pymdownx.emoji
+#### pymdownx.emoji
 
 :heart: :fontawesome-solid-rocket: :material-rocket: :octicons-rocket-16:
 
 ---
 
-### pymdownx.magiclink + pymdownx.saneheaders
+#### pymdownx.magiclink + pymdownx.saneheaders
 
 ```text
 - Issue:   #1
@@ -110,19 +118,19 @@ The `#!python range()` function is handy.
 
 ---
 
-### pymdownx.smartsymbols
+#### pymdownx.smartsymbols
 
 (c) (r) (tm) +-
 
 ---
 
-### pymdownx.mark
+#### pymdownx.mark
 
 ==highlight==
 
 ---
 
-### def_list
+#### def_list
 
 Term 1
 :   Definition 1
@@ -132,7 +140,7 @@ Term 2
 
 ---
 
-### admonition
+#### admonition
 
 !!! note
 
@@ -184,7 +192,7 @@ Term 2
 
 ---
 
-### pymdownx.progressbar
+#### pymdownx.progressbar
 
 [= 0% "0%"]
 [= 25% "25%"]

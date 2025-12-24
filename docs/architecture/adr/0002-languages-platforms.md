@@ -1,26 +1,57 @@
-# ADR 0001: Docs site stack
+# ADR 0002: Platforms and Languages
 
 - Status: accepted
-- Date: 2025-12-23
+- Date: 2025-12-24
 
 ## Context
 
-We need a public documentation site for the organization with:
-
-- Markdown authoring
-- Mermaid diagrams
-- Fast onboarding and minimal toolchain
+Fundamental decisions regarding the technology stack.
 
 ## Decision
 
-Use:
+### Team
 
-- MkDocs
-- Material for MkDocs
-- GitHub Actions deployment to GitHub Pages
+- Currently, a single-developer project.
+- Contributions are welcome — please reach out.
+
+### Platforms
+
+#### Microcontrollers
+
+- Raspberry Pi Pico: Primary choice.
+- NRF52840: Preferred for low power consumption and BLE capabilities.
+- ESP32: Secondary option.
+- Raspberry Pi (Full OS): Not funny, not considered for this scope.
+
+#### Mobile
+
+- Android: Target minSdk 36. No backward compatibility, sorry.
+- iPhone: Not planned (no hardware available for testing).
+
+#### Desktop
+
+- Windows: Possible future consideration.
+- Linux: Not planned.
+
+### Languages
+
+#### Microcontrollers
+
+- Python:
+    - MicroPython: Primary choice.
+    - CircuitPython: May be better for NRF52840.
+- C++: Fallback if Python is insufficient (e.g., performance or specific hardware requirements).
+- Kotlin: Not planned.
+- Java (Android): Java 21.
+
+### IDEs
+
+- Android/Java: IntelliJ Ultimate + Android plugin.
+- Microcontrollers/python: PyCharm + MicroPython plugin. 
 
 ## Consequences
 
-- Documentation lives centrally in `co-rc.github.io`.
-- Diagrams are authored as Mermaid fenced blocks.
-- Builds run in CI; local preview is optional (`mkdocs serve`).
+1. Limited capacity: Progress depends on a single person's availability.
+2. Simplified GitHub Flow: Direct commits to main, no pull requests or reviews.
+3. Fast decision-making: Minimal overhead for architectural changes.
+4. Shared responsibility: One person handles development, testing, and operations.

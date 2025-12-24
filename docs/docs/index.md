@@ -1,16 +1,10 @@
-# Docs
-
-A place for shared notes that apply across repositories.
-
-## Conventions
-
-- Write Markdown.
-- Prefer Mermaid for diagrams.
-- Keep pages short. Link out to repo-level documentation when it becomes large.
+# Repositories
 
 ## Repository map (fill in)
 
-| Repo     | Purpose   | Entry point |
-|----------|-----------|-------------|
-| `repo-a` | one-liner | README      |
-| `repo-b` | one-liner | README      |
+| Repo                                                                            | Purpose                           |
+|---------------------------------------------------------------------------------|-----------------------------------|
+| [`device-pico2040w-example`](https://github.com/co-rc/device-pico2040w-example) | example BLE/IrDa Gateway          |
+| [`remote-android`](https://github.com/co-rc/remote-android)                     | Remote Controller Android apk     |
+| [`.github`](https://github.com/co-rc/.github)                                   | technical: organization README.md |
+| [`co-rc.github.io`](https://github.com/co-rc/co-rc.github.io)                   | current one: github pages         |

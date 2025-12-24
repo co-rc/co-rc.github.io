@@ -49,6 +49,12 @@ markdown_extensions:
   - def_list
   - pymdownx.progressbar
 
+exclude_docs: |
+  draft.*.md
+  .*draft.md
+  template.md
+  hidden/**
+
 plugins:
   - search
   - awesome-nav
