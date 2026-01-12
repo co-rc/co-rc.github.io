@@ -158,7 +158,7 @@ if __name__ == "__main__":
     main()
 ```
 
-```plaintext
+```text
 00:00.001	[    INFO]	APP:	start
 00:00.001	[    INFO]	 BP:	bp: main tag#1 @00:00.001
 DBG:
