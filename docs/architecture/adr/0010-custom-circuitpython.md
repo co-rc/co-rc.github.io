@@ -253,15 +253,51 @@ The primary gain is internal firmware flash headroom (for freezing additional pr
 remains unchanged (QSPI flash filesystem).
 
 - Firmware flash (FLASH_FIRMWARE region)
-  - Used: 606,080 B → 325,040 B (−281,040 B, ~−274.5 KiB, ~−46.4%)
-  - Free: 188,544 B → 469,584 B (+281,040 B)
+    - Used: 606,080 B → 325,040 B (−281,040 B, ~−274.5 KiB, ~−46.4%)
+    - Free: 188,544 B → 469,584 B (+281,040 B)
 - UF2 artifact size (host)
-  - 1,212,416 B → 650,240 B (−562,176 B, ~−549.0 KiB, ~−46.4%)
+    - 1,212,416 B → 650,240 B (−562,176 B, ~−549.0 KiB, ~−46.4%)
+    - Binaries: [XIAO_nRF52840_full.uf2](../../resources/XIAO_nRF52840_full.uf2), [XIAO_nRF52840_custom.uf2](../../resources/XIAO_nRF52840_custom.uf2)
 - RAM (APP_RAM and heap, post-`gc.collect()`)
-  - APP_RAM used: 47,888 B → 45,632 B (−2,256 B, ~−2.2 KiB)
-  - HEAP free/alloc: 135,360/3,584 → 135,648/3,360 (free +288 B, alloc −224 B)
+    - APP_RAM used: 47,888 B → 45,632 B (−2,256 B, ~−2.2 KiB)
+    - HEAP free/alloc: 135,360/3,584 → 135,648/3,360 (free +288 B, alloc −224 B)
 - Filesystem (CIRCUITPY on QSPI)
-  - total/free/avail unchanged: 2,072,576 / 2,063,360 / 2,063,360 bytes
+    - total/free/avail unchanged: 2,072,576 / 2,063,360 / 2,063,360 bytes
 - Module removal verification (custom build)
-  - Present: `_bleio`, `usb_cdc`, `usb_hid`
-  - Absent (ImportError): `usb_midi`, `displayio`, `audiocore`, `ulab`, `gifio`, `jpegio`, `neopixel_write`
+    - Present: `_bleio`, `usb_cdc`, `usb_hid`
+    - Absent (ImportError): `usb_midi`, `displayio`, `audiocore`, `ulab`, `gifio`, `jpegio`, `neopixel_write`
+
+## Notes
+
+- Flash headroom expressed as very rough LOC capacity for *Python* modules frozen into firmware
+
+This estimation applies to:
+
+- **project `.py` modules**
+- that can be compiled using **`mpy-cross`** into `.mpy`
+- and then embedded into the custom CircuitPython
+- build as **frozen modules** (e.g., via `FROZEN_MPY_DIRS`).
+
+Assumption (rule-of-thumb for frozen `.mpy` size):
+
+- code-heavy / few literals: ~20–40 B/LOC
+- typical app code: ~40–80 B/LOC
+- string/data-heavy: >80 B/LOC (often much worse)
+
+Based on linker summary (FLASH_FIRMWARE region):
+
+- Originally free (before custom build): **188,544 B**
+    - ~20–40 B/LOC: **~4,713–9,427 LOC**
+    - ~40–80 B/LOC: **~2,356–4,713 LOC**
+    - > 80 B/LOC: **<2,356 LOC**
+
+- Additional flash saved by custom build: **281,040 B**
+    - ~20–40 B/LOC: **~7,026–14,052 LOC**
+    - ~40–80 B/LOC: **~3,513–7,026 LOC**
+    - > 80 B/LOC: **<3,513 LOC**
+
+(Derived) Total free after custom build: **469,584 B**
+
+- ~20–40 B/LOC: **~11,739–23,479 LOC**
+- ~40–80 B/LOC: **~5,869–11,739 LOC**
+- > 80 B/LOC: **<5,869 LOC**
