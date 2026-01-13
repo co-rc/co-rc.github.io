@@ -68,7 +68,6 @@ files on the `CIRCUITPY` drive.
 | :---------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :------- | :---- |
 | `Adafruit_CircuitPython_Logging`    | [logging](https://docs.circuitpython.org/projects/logging/en/latest/)                                                                     | /lib     | fixed |
 | `circuitpython_functools`           | [functools](https://circuitpython-functools.readthedocs.io/en/latest/)                                                                    | /lib     |       |
-| `nonblocking_timer`                 | [nonblocking_timer](https://github.com/Angeleno-Tech/nonblocking_timer)                                                                   | /lib     |       |
 | `Foamyguy_CircuitPython_nvm_helper` | [nvm_helper](https://github.com/FoamyGuy/Foamyguy_CircuitPython_nvm_helper)                                                               | /lib     |       |
 
 ## Consequences
